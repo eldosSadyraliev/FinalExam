@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Online shop</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+<header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 .bg-secondary border-bottom shadow-sm">
+    <a class="p-2 text-dark" href="/"><img src="https://images-na.ssl-images-amazon.com/images/I/41Zhzg6V0vL.png" width="100" height="100" alt=""></a>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <nav class="my-2 my-md-0 me-md-3">
+                    <a class="p-2 text-dark" href="/categories">Categories</a>
+                    <a class="p-2 text-dark" href="/about">About Us</a>
+                </nav>
+            </div>
+            <div class="col-2">
+                <a  class="p-2 text-dark" href="/new-product">Product add</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="jumbotron bg-light w-100 h-100" th:each="el : ${product}">
+    <div class="container">
+        <h1 class="display-3 bg-light text-dark" th:text="${el.name}"></h1>
+        <h2 th:text="${el.price}" class="text-dark"></h2><br>
+        <a th:href="'/product/' + ${el.id} + '/edit'" class="btn btn-primary">Edit Product</a><br><br>
+        <form th:action="'/product/' + ${el.id} + '/delete'" method="post">
+            <button class="btn btn-danger" type="submit">Delete Product From List</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SingIn</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="text-center">
+    <form th:action="@{/login}" method="post">
+        <div><label class="visually-hidden"> User Name : <input  class="form-control" placeholder="Email address" required="" autofocus="" type="text" name="username"/></label></div>
+        <div><label class="visually-hidden"> Password: <input class="form-control" placeholder="Password" required="" type="password" name="password"/> </label></div>
+        <div><input class="btn btn-primary"  type="submit" value="Sign In"/></div>
+        <p class="mt-5 mb-3 text-muted">© 2021–2021</p>
+    </form>
+</body>
+
+</html>
